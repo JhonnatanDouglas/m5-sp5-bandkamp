@@ -30,7 +30,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = getenv("SECRET_KEY", get_random_secret_key())
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -97,9 +96,6 @@ TEMPLATES = [
     },
 ]
 
-if not DEBUG:
-    STATIC_ROOT = path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 WSGI_APPLICATION = "bandkamp.wsgi.application"
 
@@ -121,13 +117,13 @@ DATABASES = {
 DATABASE_URL = getenv("DATABASE_URL")
 
 if DATABASE_URL:
-    DEBUG = False
-    db_from_env = config(
-        default=DATABASE_URL,
-        conn_max_age=500,
-        ssl_require=True,
-    )
+    db_from_env = config(default=DATABASE_URL, conn_max_age=500, ssl_require=True)
     DATABASES["default"].update(db_from_env)
+    DEBUG = False
+
+if not DEBUG:
+    STATIC_ROOT = path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Password validation
@@ -180,9 +176,9 @@ SIMPLE_JWT = {
 }
 
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 SPECTACULAR_SETTINGS = {
