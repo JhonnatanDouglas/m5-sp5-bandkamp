@@ -34,20 +34,20 @@ O Projeto BandKamp utiliza as seguintes tecnologias:
 
 ## Índice
 
-1. [Rota: Autenticação](#rota-autenticação)
-   1. [Login de Usuário](#1-login-de-usuário)
-2. [Rota: Usuários](#rota-usuários)
-   1. [Criar Usuário](#2-criar-usuário)
-   2. [Listar Usuários](#3-listar-usuários)
-   3. [Detalhes do Usuário](#4-detalhes-do-usuário)
-   4. [Atualizar Usuário](#5-atualizar-usuário)
-   5. [Excluir Usuário](#6-excluir-usuário)
-3. [Rota: Álbuns](#rota-álbuns)
-   1. [Criar Álbum](#7-criar-álbum)
-   2. [Listar Álbuns](#8-listar-álbuns)
-4. [Rota: Músicas](#rota-músicas)
-   1. [Criar Música](#9-criar-música)
-   2. [Listar Músicas de um Álbum](#10-listar-músicas-de-um-álbum)
+- [Rota: Autenticação](#rota-autenticacao)
+  - [Login de Usuário](#login-de-usuario)
+- [Rota: Usuários](#rota-usuarios)
+  - [Criar Usuário](#criar-usuario)
+  - [Listar Usuários](#listar-usuarios)
+  - [Detalhes do Usuário](#detalhes-do-usuario)
+  - [Atualizar Usuário](#atualizar-usuario)
+  - [Excluir Usuário](#excluir-usuario)
+- [Rota: Álbuns](#rota-albuns)
+  - [Criar Álbum](#criar-album)
+  - [Listar Álbuns](#listar-albuns)
+- [Rota: Músicas](#rota-musicas)
+  - [Criar Música](#criar-musica)
+  - [Listar Músicas de um Álbum](#listar-musicas-de-um-album)
 
 ### Rota: Autenticação
 
